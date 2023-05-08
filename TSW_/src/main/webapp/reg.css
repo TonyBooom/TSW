@@ -1,0 +1,80 @@
+*{
+	padding: 0;
+	margin: 0;
+	font-family: "Quicksand", sans-serif;
+}
+
+.stile{
+	background: linear-gradient(to right, rgb(178, 177, 177), rgb(236, 236, 236), rgb(178, 177, 177));
+}
+.stile section{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+}
+
+.stile section .imgBox{
+    position: relative;
+    width: 20%;
+    height: 20%;
+}
+
+
+.stile section .imgBox img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 40%;
+    height: 40%;
+    object-fit: cover;
+}
+
+.stile section .contentBox{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    height: 100%;
+}
+
+.stile section .contentBox .formBox{
+    width: 50%;
+    align-items: center;
+}
+
+.stile section .contentBox .formBox h2{
+    color: black;
+    font-weight: 600;
+    font-size: 1.5em;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    border-bottom: 4px solid red;
+    display: inline-block;
+    letter-spacing: 1px;
+}
+
+.stile section .contentBox .formBox .inputBox{
+    margin-bottom: 20px;
+}
+
+.stile section .contentBox .formBox .inputBox span{
+    font-size: 16px;
+    margin-bottom: 5px;
+    display: inline-block;
+    color: black;
+    font-weight: 300;
+    letter-spacing: 1px;
+}
+
+.stile section .contentBox .formBox .inputBox input{
+    padding: 10px 20px;
+    width: 100%;
+    outline: none;
+    font-weight: 400;
+    font-size: 16px;
+    letter-spacing: 1px;
+    color: black;
+    background: transparent;
+    border-radius: 30px;
+}
