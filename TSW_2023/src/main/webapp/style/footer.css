@@ -1,5 +1,6 @@
 html, body {
-     min-height: 100%;
+	font-family: sans-serif;
+    min-height: 100%;
 }
 
 .footer-dark {

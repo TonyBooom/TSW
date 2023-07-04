@@ -38,7 +38,7 @@
 
 		<jsp:include page="header.jsp" />
 
-		<h1 class="titoloCatalogo">Catalogo Admin Squishy Muffins</h1>
+		<h1 class="titoloCatalogo">Catalogo Admin Sito TSW</h1>
 	
 		<div class="div_esterno">
 	
@@ -74,22 +74,6 @@
 
 
 		<jsp:include page="footer.jsp" />
-	
-	<%-- 
-		<table>
-		<% // Il for crea una variabile del tipo ProdottoBean ed ad ogni iterazione va ad assegnare a quella variabile il contenuto di obj all'i-esima posizione 
-		if(obj != null)
-		for(ProdottoBean var:obj){ 
-		%>
-		<tr>
-		<td> <a href="Catalogo?action=view&id=<%= var.getCodprodotto()%>"> <img src="<%= var.getImmagine().getPath()%>"> </a> </td>
-		<td> <a href="Catalogo?action=view&id=<%= var.getCodprodotto()%>"> <%= var.getNome()%> </a>	<%= var.getPrezzo()%> &euro;</td>
-		<td> <a href="Modify?action=mod&id=<%= var.getCodprodotto()%>">    <input type="button" value="Modifica"> </a></td>
-		</tr>
-		<%}%>
-		</table>
-		
-		<jsp:include page="footer.jsp"/> --%>
 		
 	</body>
 	

@@ -1,6 +1,7 @@
 package Model;
 
 import java.sql.Connection;
+
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -32,7 +33,7 @@ public class UserDao
 			
 			preparedStatement.executeUpdate();
 
-				//connection.commit(); //Salva le modifiche sul database
+			connection.commit();
 		} 
 		finally 
 		{
@@ -89,6 +90,33 @@ public synchronized void doUpdate (User var, String vecchia_mail) throws SQLExce
 	}
 	
 	
+	public User retrieveUserByEmail(String email) throws SQLException {
+		Connection connection = null;
+    	PreparedStatement statement = null;
+    	ResultSet resultSet = null;
+    	User user = null;
+
+    	try {
+        	connection = DriverManagerConnectionPool.getConnection();// Ottieni la connessione al database
+
+        	String q = "SELECT * FROM users WHERE email = ?";
+        	statement = connection.prepareStatement(q);
+        	statement.setString(1, email);
+        	resultSet = statement.executeQuery();
+
+        	if (resultSet.next()) {
+            	user = new User();
+            	user.setEmail(resultSet.getString("email"));
+            	user.setPassword(resultSet.getString("password"));
+            	// Altre informazioni dell'utente che potresti voler recuperare dal database
+        	}
+    	} finally {
+			DriverManagerConnectionPool.releaseConnection(connection);
+    	}
+
+    	return user;
+	}
+
 	public synchronized User doRetrieveByKey(String Email) throws SQLException 
 	{
 		Connection connection = null;
@@ -172,6 +200,9 @@ public synchronized void doUpdate (User var, String vecchia_mail) throws SQLExce
 		return (result != 0);
 	}
 
+	
+
+    
 	public synchronized Collection<User> doRetrieveAll(String order) throws SQLException 
 	{
 		Connection connection = null;

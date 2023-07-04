@@ -6,11 +6,11 @@
 
 .Modifica{
 	text-decoration: none;
-	border: 1px solid #ffc1c1;
+	border: 1px solid lightgray;
 	border-radius: 2em;
 	font-size: 1em;
 	color: black;
-	background-color: #ffc1c1;
+	background-color: lightgray;
 	font-weight: normal;
 	text-align:center;
 	width: 100%;
@@ -26,20 +26,19 @@ a:hover{
 
 .Modifica:hover {
 	color:black;
-	font-color:white;
-	background-color:lightblue;
+	background-color:gray;
 	transition:0.3s;
 	cursor: pointer;
-	border: lightblue;
+	border: gray;
 }
 
 .save{
 	text-decoration: none;
-	border: 1px solid #ffc1c1;
+	border: 1px solid lightgray;
 	border-radius: 2em;
 	font-size: 1em;
 	color: black;
-	background-color: #ffc1c1;
+	background-color: lightgray;
 	font-weight: normal;
 	text-align:center;
 	width: 50%;
@@ -50,16 +49,15 @@ a:hover{
 
 .save:hover{
 	color:black;
-	font-color:white;
-	background-color:lightblue;
+	background-color: gray;
 	transition:0.3s;
 	cursor: pointer;
-	border: lightblue;
+	border: gray;
 }
 
 .campi{
 	border-radius:20px;
-	border: 1px solid grey;
+	border: 1px solid gray;
 	text-align:center;
 	margin:2px;
 }
@@ -118,11 +116,11 @@ div#prova {
 
 .Modifica2{
 	text-decoration: none;
-	border: 1px solid lightblue;
+	border: 1px solid rgb(128, 128, 128);
 	border-radius: 2em;
 	font-size: 1em;
 	color: black;
-	background-color: lightblue;
+	background-color: rgb(128, 128, 128);
 	font-weight: normal;
 	text-align:center;
 	width: 100%;
@@ -176,9 +174,6 @@ td, th {
   
 }
 
-tr:nth-child(even) {
-  background-color: lightblue;
-}
 
 .tabella{
 	display:flex;
@@ -200,11 +195,11 @@ tr:nth-child(even) {
 
 .fattura{
 	text-decoration: none;
-	border: 1px solid #ffc1c1;
+	border: 1px solid rgb(192, 192, 192);
 	border-radius: 2em;
 	font-size: 0.7em;
 	color: black;
-	background-color: #ffc1c1;
+	background-color: rgb(192, 192, 192);
 	font-weight: bold;
 	text-align:center;
 	width: 100%;
@@ -221,16 +216,6 @@ tr:nth-child(even) {
 	    transform: scale(1.1);
     transition: .3s;
 } 
-
-.error_box{
-	display:flex;
-	flex-direction:column;
-	justify-content:center;
-	align-items:center;
-	font-weight:bold;
-	font-size:1.6em;
-	
-}
 
 
 

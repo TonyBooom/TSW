@@ -1,18 +1,15 @@
 package Control;
 
-import java.io.IOException; 
+import java.io.IOException;
 import java.sql.SQLException;
 
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.swing.JOptionPane;
 
 import Model.*;
-
 
 /**
  * Servlet implementation class Login
@@ -35,43 +32,44 @@ public class Login extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		String Email;
-		RequestDispatcher dispatch = null;
-		
-		User user = new User();
-		UserDao udao = new UserDao();
+		String Password;
 		
 		Email= request.getParameter("username");
-		String password = request.getParameter("password");
+		Password=request.getParameter("password");
+		
+		User utente = new User();
+		UserDao udao = new UserDao();
 		
 		try {
-			user = udao.doRetrieveByKey(Email);
-			if(user != null && user.getEmail().compareTo("") != 0) {
-				
-				//response.getWriter().append("nome: " + utente.getNome() + "\ncognome: " + utente.getCognome());
+			utente = udao.doRetrieveByKey(Email);
+			if(utente != null && utente.getEmail().compareTo("") != 0) {
+				if(Password.compareTo(utente.getPassword()) == 0) {
+					//response.getWriter().append("nome: " + utente.getNome() + "\ncognome: " + utente.getCognome());
 					
-						request.getSession().setAttribute("utente",user.getNome());
-						dispatch = request.getRequestDispatcher("PaginaAccesso.jsp");
-			}
-			
-			else if(user == null){
-					   request.setAttribute("utente","assente");
-					   dispatch = request.getRequestDispatcher("Login.jsp");
-					   
-					  
+					if(utente.isAdmin()) {
+						request.getSession().setAttribute("secure", "Admin");
+						request.getSession().setAttribute("Utente loggato" , utente );       //Per motivi di sicurezza 
+						response.sendRedirect("./CatalogAdmin.jsp");
+					}
+					else {
+						request.getSession().setAttribute("secure", "Utente");
+						request.getSession().setAttribute("Utente loggato" , utente );       //Per motivi di sicurezza
+						response.sendRedirect("./Catalog.jsp");
+					}
+					
+					
+				}
+				else {
+					response.getWriter().append("Password non corretta");
+				}
 			}
 			else {
-					   request.setAttribute("utente","errato");
-			           dispatch = request.getRequestDispatcher("Login.jsp");
-			}	 
-			
-			
-			dispatch.forward(request, response);
-					
+				response.getWriter().append("Utente non registrato");
+			}
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
 		
-				
 		
 	}
 

@@ -36,8 +36,7 @@
 	            </div>
 	        </div>
 	        
-	        <p id="loginErr" class="loginError"></p>
-
+	        
 	        <div class="action">
 	            <a href="Registrazione.jsp">Registrati</a>
 	            <button type="submit" id="loginButton">Login</button>
@@ -45,6 +44,10 @@
 	    </form>
 	
 		<jsp:include page="footer.jsp"/>
+		
+		
+		
+		
 		
 </body>
 </html>

@@ -4,6 +4,9 @@ public class CategoriaBean {
 
 	int codcategoria;
 	String Nome;
+	ImmagineBean Immagine;
+	
+	
 	public int getCodcategoria() {
 		return codcategoria;
 	}
@@ -18,6 +21,13 @@ public class CategoriaBean {
 	}
 	public CategoriaBean() {
 		super();
+	}
+	
+	public ImmagineBean getImmagine() {
+		return Immagine;
+	}
+	public void setImmagine(ImmagineBean immagine) {
+		Immagine = immagine;
 	}
 	
 	

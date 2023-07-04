@@ -1,240 +1,62 @@
-.center{
-  margin-top: -50px;
-  display: flex;
-  padding-bottom: 350px;
-  justify-content: center;
-}
-
-.video{
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  width: 100%;
-  height: 100%;
-  z-index:-1;
-	
-}
-  
-a{
-	text-decoration: none !important;
-	color:black !important;
-}
-
-.spanHome{
-  text-align: center;
-/*   font-family: 'intro_script_demomedium'; */
-  font-size: 7.5em;
-  z-index: 999;
-  position: absolute;
-  margin-top: 260px;
-  z-index: 800;
-  animation-duration: 2s;
-  animation-name: entraTesto;
-  color: white;
-  font-family: ubuntu;
-  text-shadow: 0 0 15px #000;
-}
-
-.parteFinaleHome{
-	text-align: center;
-	display: flex;
-	justify-content: center;
-	padding-bottom: 15px;
-}
-
-.uname{
-	padding-left: 8px;
-	width: 170px;
-	height: 60px;
-	font-size: 30px;
-	border-color: #2f2f2f;
-	border: 2px solid #2f2f2f;
-	background-color: #FCEFD4;
-	border-radius: 17px;
-	cursor:pointer;
-	text-align:center;
-} 
-
-.uname{
-	text-decoration: none;
-	border: 1px solid lightgray;
-	border-radius: 2em;
-	font-size: 1em;
-	color: black;
-	background-color: #808080;
-	font-weight: normal;
-	text-align:center;
-	width: 40%;
-	padding: 10px;
-    margin: 2px;
-    justify-content:space-around;
-    width:30%;
-
-}
-
-.uname:hover {
-	color:black;
-	background-color: lightgray;
-	transition:0.3s;
-	cursor: pointer;
-	border: white;
-}
-
-@keyframes entraTesto{
-	0% {
-	margin-top: -800px;
-	}
-					
-	100% {
-	margin-top: 260px;
-	}
-	}
-	
-	@keyframes slideIn {
-	0% {
-	width: 0%;
-	}
-					
-	100% {
-	width: 50%;
-	}
-}
-
-.wave-sx {
-  z-index: -100;  
-  width: 300px;
-  width: 50%;
-   border: 1px solid #2f2f2f;
-  animation-duration: 2s;
-  animation-name: slideIn;
-  margin-top: 385px;
-} 
-
-
-@keyframes entra{
-				  0% {
-				    margin-top: -800px;
-				  }
-				
-				  100% {
-				    margin-top: 400px;
-				  }
-				}
-
-					@media screen and (max-width:800px){
-					.parteSinistraHome{
-						display:flex;
-						justify-content:center;
-					}
-
-					.parteDestraHome{
-						display: none;
-					}
-	
-.spanHome{
-  font-size: 5rem;
-  text-shadow: 0 0 15px #000;
-}
-
-.center{
-  margin-top: -50px;
-  display: flex;
-  padding-bottom: 700px;
-  justify-content: center;
-}
-
-.wave-sx {
-  z-index: -100;  
-  width: 300px;
-  width: 70%;
-  border: 1px solid #2f2f2f;
-  animation-duration: 2s;
-  animation-name: slideIn;
-  margin-top: 100px;
-  margin-top: 338px;
-}
-	
-
-
-
-
-				@keyframes entra{
-				  0% {
-				    margin-top: -800px;
-				  }
-				
-				  100% {
-				    margin-top: 360px;
-				  }
-				}
-				}
-
-
-
-			@media (max-width: 480px){
-			.parteSinistraHome{
-				display:flex;
-				justify-content:center;
-			}
-			
-			.parteDestraHome{
-				display: none;
-			}
-				
-			@keyframes slideIn {
-			  0% {
-			    width: 0%;
-			  }
-			
-			  100% {
-			    width: 90%;
-			  }
-			}
-
-
-
-.wave-sx {
-  z-index: -100;  
-  width: 300px;
-  width: 90%;
-  border: 1px solid #2f2f2f; 
-  animation-duration: 2s;
-  animation-name: slideIn;
-  margin-top: 100px;
-  margin-top: 338px;
-}
-	
-					@keyframes entraTesto{
-				  0% {
-				    margin-top: -800px;
-				  }
-				
-				  100% {
-				    margin-top: 275px;
-				  }
-				}
-
-.spanHome{
-  text-align: center;
-  font-family: 'intro_script_demomedium';
-  font-size: 4.5rem;
-  z-index: 999;
-  position: absolute;
-  margin-top: 225px;
-  z-index: 800;
-  animation-duration: 2s;
-  animation-name: entraTesto;
-}
-	
-	
-					@keyframes entra{
-					  0% {
-					    margin-top: -800px;
-					  }
-					
-					  100% {
-					    margin-top: 355px;
-					  }
-					}
-						
-} 
+ 
+ * {
+      margin: 0;
+      padding: 0;
+    }
+    
+    /* Stile del body */
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+     .video-container {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      overflow: hidden;
+    }
+    
+    /* Stile del video */
+    video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    
+    /* Stile del contenitore del contenuto principale */
+    .content {
+      margin-top: 100px;
+      text-align: center;
+      flex-grow: 1;
+      position: relative;
+      z-index: 1;
+    }
+    
+    
+      /* Media query per il layout responsive */
+    @media screen and (max-width: 768px) {
+      .navbar {
+        position: fixed;
+        width: 100%;
+      }
+      
+      .navbar li {
+        float: none;
+        display: inline-block;
+      }
+      
+      .content {
+        margin-top: 70px;
+      }
+      
+      .footer {
+        position: fixed;
+        width: 100%;
+        bottom: 0;
+      }
+    }

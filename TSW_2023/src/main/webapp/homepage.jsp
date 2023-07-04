@@ -19,28 +19,22 @@
 
 
 	<body>
-	
-		<jsp:include page="header.jsp"/>	
-		
-	    <div class="center">
-	        
-	        <div class="video"> 
-	        <video autoplay muted loop id="myVideo">
-  			<source src="video1.mp4" type="video/mp4">
-			</video>
-			</div>
-	  	 	
-	        <span class="spanHome" id="testo">Sito TSW</span>
-	         <hr class="wave-sx" > 
-	    </div>		
-		
-		<div class="parteFinaleHome">
-			<button onclick="location.href = 'Catalog.jsp' "class="uname">Vai al Catalogo</button>
-		</div>
-		
-		
-		<br><br><br><br><br><br><br>
+		<jsp:include page="header.jsp"/>
+			
+
+		<div class="video-container">
+    		<video autoplay loop muted>
+    		  <source src="video1.mp4" type="video/mp4">
+    		</video>
+  		</div>
+
+ 		 <div class="content">
+  			  <h1>Sito TSW</h1>
+   		 </div>
+
+	   <footer>
 		<jsp:include page="footer.jsp"/>
+	   </footer>
 	</body>
 
 </html>
